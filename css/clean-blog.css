@@ -70,7 +70,7 @@ hr.small {
 }
 @media only screen and (min-width: 768px) {
   .navbar-custom {
-    background: transparent;
+    background: #333333;
     border-bottom: 1px solid transparent;
   }
   .navbar-custom .navbar-brand {
@@ -141,11 +141,12 @@ hr.small {
   background-color: #777777;
   background: no-repeat center center;
   background-attachment: scroll;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
-  margin-bottom: 50px;
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  background-size: contain;
+  -o-background-size: contain;
+  margin-bottom: 0px;
+  margin-top: 100px;
 }
 .intro-header .site-heading,
 .intro-header .post-heading,
