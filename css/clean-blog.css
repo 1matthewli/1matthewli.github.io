@@ -10,6 +10,13 @@
   cursor: pointer;
 }
 
+#resume {
+  padding-top: 50px; 
+  width: 718px; 
+  height: 700px;
+  text-align: center;
+}
+
 body {
   font-family: 'Lora', 'Times New Roman', serif;
   font-size: 20px;
@@ -155,10 +162,24 @@ hr.small {
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
-  height: 80%;
+  height: 65%;
   margin-bottom: 0px;
-  margin-top: 50px;
+  /*margin-top: 50px;*/
 }
+
+.intro-header-main {
+  background-color: #777777;
+  background: no-repeat center center;
+  background-attachment: scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  height: 85%;
+  margin-bottom: 0px;
+/*  margin-top: 50px;*/
+}
+
 .intro-header .site-heading,
 .intro-header .post-heading,
 .intro-header .page-heading {
@@ -281,7 +302,7 @@ hr.small {
   border-bottom-left-radius: 5px;
 }
 footer {
-  padding: 25px 0 0px;
+  padding: 25px 0 25px;
 }
 footer .list-inline {
   margin: 0;
