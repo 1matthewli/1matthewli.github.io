@@ -155,7 +155,7 @@ hr.small {
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
-  height: 75%;
+  height: 80%;
   margin-bottom: 0px;
   margin-top: 50px;
 }
@@ -281,7 +281,7 @@ hr.small {
   border-bottom-left-radius: 5px;
 }
 footer {
-  padding: 35px 0 0px;
+  padding: 25px 0 0px;
 }
 footer .list-inline {
   margin: 0;
