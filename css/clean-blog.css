@@ -70,24 +70,24 @@ hr.small {
 }
 @media only screen and (min-width: 768px) {
   .navbar-custom {
-    background: #333333;
+    background: white;
     border-bottom: 1px solid transparent;
   }
   .navbar-custom .navbar-brand {
-    color: white;
+    color: gray;
     padding: 20px;
   }
   .navbar-custom .navbar-brand:hover,
   .navbar-custom .navbar-brand:focus {
-    color: rgba(255, 255, 255, 0.8);
+    color: black;
   }
   .navbar-custom .nav li a {
-    color: white;
+    color: gray;
     padding: 20px;
   }
   .navbar-custom .nav li a:hover,
   .navbar-custom .nav li a:focus {
-    color: rgba(255, 255, 255, 0.8);
+    color: black;
   }
 }
 @media only screen and (min-width: 1170px) {
@@ -104,6 +104,7 @@ hr.small {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
   }
+
   .navbar-custom.is-fixed {
     /* when the user scrolls down, we hide the header right above the viewport */
     position: fixed;
@@ -141,12 +142,13 @@ hr.small {
   background-color: #777777;
   background: no-repeat center center;
   background-attachment: scroll;
-  -webkit-background-size: contain;
-  -moz-background-size: contain;
-  background-size: contain;
-  -o-background-size: contain;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  height: 70%;
   margin-bottom: 0px;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 .intro-header .site-heading,
 .intro-header .post-heading,
@@ -182,7 +184,7 @@ hr.small {
 @media only screen and (min-width: 768px) {
   .intro-header .site-heading h1,
   .intro-header .page-heading h1 {
-    font-size: 80px;
+    font-size: 60px;
   }
 }
 .intro-header .post-heading h1 {
