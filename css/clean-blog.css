@@ -78,7 +78,7 @@ hr.small {
 }
 @media only screen and (min-width: 768px) {
   .navbar-custom {
-    background: white;
+    background: #F8F8F8;
     border-bottom: 1px solid transparent;
   }
   .navbar-custom .navbar-brand {
@@ -154,7 +154,7 @@ hr.small {
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
-  height: 70%;
+  height: 75%;
   margin-bottom: 0px;
   margin-top: 50px;
 }
@@ -280,7 +280,7 @@ hr.small {
   border-bottom-left-radius: 5px;
 }
 footer {
-  padding: 50px 0 65px;
+  padding: 35px 0 0px;
 }
 footer .list-inline {
   margin: 0;
