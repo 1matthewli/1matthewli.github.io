@@ -9,10 +9,46 @@ $(function() {
     });
 });
 
+var currentPage = 'home';
+
 $(document).ready(function() {
+    var pages = ['home', 'about', 'resume', 'contact'];
+
     var movementStrength = 15;
     var height = movementStrength / $(window).height();
     var width = movementStrength / $(window).width();
+
+    pages.map(function(item, index) {
+        if (item !== 'home') {
+            $('.' + item + '-content').css('display', 'none');
+            $('.' + item + '-header').css('display', 'none');
+        }
+        $('#' + item + '-button').mouseup(function(e) {
+            if (currentPage !== item) {
+                $('.' + currentPage + '-content').fadeOut();
+                $('.' + item + '-content').fadeIn();
+
+                $('.' + currentPage + '-header').css('display', 'none');
+                $('.' + item + '-header').css('display', '');
+
+                if (item === 'resume') {
+                    $('#intro-header-main').css("height", '0');
+                }
+                else if (item === 'home') {
+                    $('#intro-header-main').css("height", '85%');
+                }
+                else {
+                    $('#intro-header-main').css("height", '55%');
+                }
+                currentPage = item;
+            }
+        })
+    });
+
+    // $('#about_button').mouseup(function(e) {
+    //     $('#intro-header-main').css("height", '65%');
+    //     $(".about-content").fadeIn();
+    // })
 
     $(document).mousemove(function(e){
 
