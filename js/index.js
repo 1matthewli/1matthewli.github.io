@@ -31,10 +31,10 @@ $(document).ready(function() {
                 $('.' + currentPage + '-header').css('display', 'none');
                 $('.' + item + '-header').css('display', '');
 
-                if (item === 'resume') {
-                    $('#intro-header-main').css("height", '0');
-                }
-                else if (item === 'home') {
+                // if (item === 'resume') {
+                //     $('#intro-header-main').css("height", '100%');
+                // }
+                if (item === 'home' || item === 'contact') {
                     $('#intro-header-main').css("height", '85%');
                 }
                 else {
