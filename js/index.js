@@ -10,7 +10,7 @@ $(function() {
 });
 
 $(document).ready(function() {
-    var movementStrength = 20;
+    var movementStrength = 15;
     var height = movementStrength / $(window).height();
     var width = movementStrength / $(window).width();
 
@@ -21,7 +21,7 @@ $(document).ready(function() {
       var newvalueX = width * pageX * -1;
       var newvalueY = height * pageY * -1;
 
-      $(".intro-header").css("background-position", "0px "+newvalueY+"px");
+      $(".intro-header").css("background-position", newvalueX + "px " + newvalueY + "px");
     });
 });
 
