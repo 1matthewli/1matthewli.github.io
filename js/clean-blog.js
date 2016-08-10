@@ -9,6 +9,22 @@ $(function() {
     });
 });
 
+$(document).ready(function() {
+    var movementStrength = 20;
+    var height = movementStrength / $(window).height();
+    var width = movementStrength / $(window).width();
+
+    $(document).mousemove(function(e){
+
+      var pageX = e.pageX - ($(window).width() / 2);
+      var pageY = e.pageY - ($(window).height() / 2);
+      var newvalueX = width * pageX * -1;
+      var newvalueY = height * pageY * -1;
+
+      $(".intro-header").css("background-position", "0px "+newvalueY+"px");
+    });
+});
+
 // Navigation Scripts to Show Header on Scroll-Up
 jQuery(document).ready(function($) {
     var MQL = 1170;
