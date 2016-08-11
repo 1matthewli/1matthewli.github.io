@@ -43,7 +43,7 @@ $(document).ready(function() {
     pages.map(function(item, index) {
         $('#' + item + '-button').css("cursor", "pointer")
         $('#' + item + '-button').mouseup(function(e) {
-            
+
             if (currentPage !== item) {
                 $('.' + currentPage + '-content').css('display', 'none');
                 $('.' + item + '-content').fadeIn();
@@ -113,9 +113,10 @@ function preloader() {
     if (document.images) {
 
         var pages = ['about', 'resume', 'contact', 'home'];
-        pages.map(function(item) {
-            var img = new Image();
-            img.src = "img/"+item+"-bg.jpg";
+        var images = new Array();
+        pages.map(function(item, i) {
+            images[i] = new Image();
+            images[i].src = "img/"+item+"-bg.jpg";
         })
     }
 }
