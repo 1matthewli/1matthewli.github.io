@@ -31,9 +31,9 @@ function introAnimation () {
 }
 
 function preloadImages () {
-    var pages = ['home', 'about', 'resume', 'contact'];
+    var pages = ['about', 'resume', 'contact', 'home'];
     pages.map(function(item) {
-        $('#null').css('background-image', "url('img/"+item+"-bg.jpg')");
+        $('#intro-header-main').css('background-image', "url('img/"+item+"-bg.jpg')");
     })
 }
 $(document).ready(function() {
