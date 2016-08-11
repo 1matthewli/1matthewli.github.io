@@ -52,7 +52,7 @@ $(document).ready(function() {
                 $('.' + currentPage + '-header').css('display', 'none');
                 $('.' + item + '-header').fadeIn();
 
-                // $('#intro-header-main').css('background-image', "url('img/"+item+"-bg.jpg')");
+                $('#intro-header-main').css('background-image', "url('img/"+item+"-bg.jpg')");
 
                 if (item === 'home' || item === 'contact') {
                     $('#intro-header-main').css("height", '85%');
