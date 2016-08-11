@@ -17,7 +17,7 @@ function introAnimation () {
 
     $('.navbar-custom').css('display', 'none');
     $('footer').css('display', 'none')
-    $('.home-header').css('display', 'none');
+    // $('.home-header').css('display', 'none');
     $('#intro-header-main').css('display', 'none');
     $('#intro-header-main').delay(100).fadeIn();
     $('.home-header').delay(headerDelay).fadeIn(headerFadeTime);
@@ -40,10 +40,10 @@ $(document).ready(function() {
     introAnimation();
 
     pages.map(function(item, index) {
-        if (item !== 'home') {
-            $('.' + item + '-content').css('display', 'none');
-            $('.' + item + '-header').css('display', 'none');
-        }
+        // if (item !== 'home') {
+        //     $('.' + item + '-content').css('display', 'none');
+        //     $('.' + item + '-header').css('display', 'none');
+        // }
         $('#' + item + '-button').mouseup(function(e) {
             if (currentPage !== item) {
                 $('.' + currentPage + '-content').fadeOut();
