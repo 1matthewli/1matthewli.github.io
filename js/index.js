@@ -50,7 +50,7 @@ $(document).ready(function() {
                 $('.' + item + '-content').fadeIn();
 
                 $('.' + currentPage + '-header').css('display', 'none');
-                $('.' + item + '-header').css('display', '');
+                $('.' + item + '-header').fadeIn();
 
                 // $('#intro-header-main').css('background-image', "url('img/"+item+"-bg.jpg')");
 

@@ -4,7 +4,8 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
 
-.home-header, .home-content, .about-header, .about-content, .resume-header, .resume-content, .contact-header, .contact-content {
+.home-header, .home-content, .about-header, .about-content, 
+.resume-header, .resume-content, .contact-header, .contact-content {
   display: none;
 }
 
