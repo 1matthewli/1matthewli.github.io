@@ -31,8 +31,8 @@ $(document).ready(function() {
     var pages = ['home', 'about', 'resume', 'contact'];
 
     var movementStrength = 15;
-    var height = movementStrength / $(window).height();
-    var width = movementStrength / $(window).width();
+    var height = movementStrength / $(document).height();
+    var width = movementStrength / $(document).width();
 
     introAnimation();
 
@@ -70,11 +70,12 @@ $(document).ready(function() {
 
     $(document).mousemove(function(e){
 
-      var pageX = e.pageX - ($(window).width() / 2);
-      var pageY = e.pageY - ($(window).height() / 2);
+      var pageX = e.pageX - ($(document).width() / 2);
+      var pageY = e.pageY - ($(document).height() / 2);
       var newvalueX = width * pageX * -1;
       var newvalueY = height * pageY * -1;
-
+      console.log(pageX, pageY)
+      console.log(width, height)
       $(".intro-header").css("background-position", newvalueX + "px " + newvalueY + "px");
     });
 });
