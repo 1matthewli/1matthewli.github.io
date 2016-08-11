@@ -63,8 +63,8 @@ $(document).ready(function() {
             }
             if (menuClicked)
                 $('#bs-example-navbar-collapse-1').collapse("toggle");
-            
-            menuClicker = false;
+
+            menuClicked = false;
         })
     });
 
