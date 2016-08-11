@@ -30,14 +30,6 @@ function introAnimation () {
     $('#intro-header-main').css('-webkit-transition', 'height .5s');
 }
 
-function preloadImages () {
-    $(document.body).append("<div id='preload'> </div>")
-    var pages = ['about', 'resume', 'contact', 'home'];
-    $('#preload').css('visibility', 'hidden');
-    pages.map(function(item) {
-        $('#preload').css('background-image', "url('img/"+item+"-bg.jpg')");
-    })
-}
 $(document).ready(function() {
     var pages = ['home', 'about', 'resume', 'contact'];
 
@@ -53,6 +45,7 @@ $(document).ready(function() {
         //     $('.' + item + '-content').css('display', 'none');
         //     $('.' + item + '-header').css('display', 'none');
         // }
+        $('#' + item + '-button').css("cursor", "pointer")
         $('#' + item + '-button').mouseup(function(e) {
             if (currentPage !== item) {
                 $('.' + currentPage + '-content').fadeOut();
@@ -121,3 +114,31 @@ jQuery(document).ready(function($) {
             });
     }
 });
+
+function preloader() {
+    if (document.images) {
+
+        var pages = ['about', 'resume', 'contact', 'home'];
+        pages.map(function(item) {
+            var img = new Image();
+            img.src = "img/"+item+"-bg.jpg";
+        })
+    }
+}
+
+function addLoadEvent(func) {
+    var oldonload = window.onload;
+    if (typeof window.onload != 'function') {
+        window.onload = func;
+    } else {
+        window.onload = function() {
+            if (oldonload) {
+                oldonload();
+            }
+            func();
+        }
+    }
+}
+
+addLoadEvent(preloader);
+
