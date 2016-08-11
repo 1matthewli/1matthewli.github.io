@@ -71,6 +71,7 @@ hr.small {
   top: 0;
   left: 0;
   width: 100%;
+  display: none;
   z-index: 3;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
@@ -174,6 +175,7 @@ hr.small {
   -ms-transition: height 1s;
   -o-transition: height 1s;
   -webkit-transition: height 1s;
+  display: none;
   height: 65%;
   margin-bottom: 0px;
   background-position: 0px 0px;
@@ -314,6 +316,7 @@ hr.small {
   border-bottom-left-radius: 5px;
 }
 footer {
+  display: none;
   padding: 25px 0 25px;
 }
 footer .list-inline {

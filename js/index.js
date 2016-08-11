@@ -14,11 +14,7 @@ var currentPage = 'home';
 function introAnimation () {
     var headerDelay = 400;
     var headerFadeTime = 700;
-
-    $('.navbar-custom').css('display', 'none');
-    $('footer').css('display', 'none')
-    // $('.home-header').css('display', 'none');
-    $('#intro-header-main').css('display', 'none');
+    
     $('#intro-header-main').delay(300).fadeIn();
     $('.home-header').delay(headerDelay).fadeIn(headerFadeTime);
     $('.navbar-custom').delay(headerDelay + headerFadeTime).fadeIn();
