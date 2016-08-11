@@ -46,7 +46,7 @@ $(document).ready(function() {
     var width = movementStrength / $(window).width();
 
     introAnimation();
-    preloadImages();
+    // preloadImages();
 
     pages.map(function(item, index) {
         // if (item !== 'home') {
@@ -61,7 +61,9 @@ $(document).ready(function() {
                 $('.' + currentPage + '-header').css('display', 'none');
                 $('.' + item + '-header').fadeIn();
 
+                // $('#intro-header-main').css('opacity');
                 $('#intro-header-main').css('background-image', "url('img/"+item+"-bg.jpg')");
+                // $('#intro-header-main').fadeIn();
 
                 if (item === 'home' || item === 'contact') {
                     $('#intro-header-main').css("height", '85%');
