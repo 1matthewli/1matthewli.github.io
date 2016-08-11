@@ -48,7 +48,7 @@ $(document).ready(function() {
         $('#' + item + '-button').css("cursor", "pointer")
         $('#' + item + '-button').mouseup(function(e) {
             if (currentPage !== item) {
-                $('.' + currentPage + '-content').fadeOut();
+                $('.' + currentPage + '-content').css('display', 'none');
                 $('.' + item + '-content').fadeIn();
 
                 $('.' + currentPage + '-header').css('display', 'none');
@@ -68,11 +68,6 @@ $(document).ready(function() {
             }
         })
     });
-
-    // $('#about_button').mouseup(function(e) {
-    //     $('#intro-header-main').css("height", '65%');
-    //     $(".about-content").fadeIn();
-    // })
 
     $(document).mousemove(function(e){
 
