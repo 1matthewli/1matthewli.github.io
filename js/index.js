@@ -74,8 +74,6 @@ $(document).ready(function() {
       var pageY = e.pageY - ($(document).height() / 2);
       var newvalueX = width * pageX * -1;
       var newvalueY = height * pageY * -1;
-      console.log(pageX, pageY)
-      console.log(width, height)
       $(".intro-header").css("background-position", newvalueX + "px " + newvalueY + "px");
     });
 });
