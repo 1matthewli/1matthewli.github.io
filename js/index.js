@@ -11,12 +11,33 @@ $(function() {
 
 var currentPage = 'home';
 
+function introAnimation () {
+    var headerDelay = 400;
+    var headerFadeTime = 700;
+
+    $('.navbar-custom').css('display', 'none');
+    $('footer').css('display', 'none')
+    $('.home-header').css('display', 'none');
+    $('#intro-header-main').css('display', 'none');
+    $('#intro-header-main').delay(100).fadeIn();
+    $('.home-header').delay(headerDelay).fadeIn(headerFadeTime);
+    $('.navbar-custom').delay(headerDelay + headerFadeTime).fadeIn();
+    $('footer').delay(headerDelay + headerFadeTime).fadeIn();
+
+    $('#intro-header-main').css('-moz-transition', 'height .5s');
+    $('#intro-header-main').css('-ms-transition', 'height .5s');
+    $('#intro-header-main').css('-o-transition', 'height .5s');
+    $('#intro-header-main').css('-webkit-transition', 'height .5s');
+}
+
 $(document).ready(function() {
     var pages = ['home', 'about', 'resume', 'contact'];
 
     var movementStrength = 15;
     var height = movementStrength / $(window).height();
     var width = movementStrength / $(window).width();
+
+    introAnimation();
 
     pages.map(function(item, index) {
         if (item !== 'home') {
@@ -31,9 +52,8 @@ $(document).ready(function() {
                 $('.' + currentPage + '-header').css('display', 'none');
                 $('.' + item + '-header').css('display', '');
 
-                // if (item === 'resume') {
-                //     $('#intro-header-main').css("height", '100%');
-                // }
+                // $('#intro-header-main').css('background-image', "url('img/"+item+"-bg.jpg')");
+
                 if (item === 'home' || item === 'contact') {
                     $('#intro-header-main').css("height", '85%');
                 }

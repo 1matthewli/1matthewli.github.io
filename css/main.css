@@ -166,10 +166,10 @@ hr.small {
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
-  -moz-transition: height .5s;
-  -ms-transition: height .5s;
-  -o-transition: height .5s;
-  -webkit-transition: height .5s;
+  -moz-transition: height 1s;
+  -ms-transition: height 1s;
+  -o-transition: height 1s;
+  -webkit-transition: height 1s;
   height: 65%;
   margin-bottom: 0px;
   background-position: 0px 0px;
