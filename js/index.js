@@ -30,6 +30,12 @@ function introAnimation () {
     $('#intro-header-main').css('-webkit-transition', 'height .5s');
 }
 
+function preloadImages () {
+    var pages = ['home', 'about', 'resume', 'contact'];
+    pages.map(function(item) {
+        $('#null').css('background-image', "url('img/"+item+"-bg.jpg')");
+    })
+}
 $(document).ready(function() {
     var pages = ['home', 'about', 'resume', 'contact'];
 
@@ -38,6 +44,7 @@ $(document).ready(function() {
     var width = movementStrength / $(window).width();
 
     introAnimation();
+    preloadImages();
 
     pages.map(function(item, index) {
         // if (item !== 'home') {
