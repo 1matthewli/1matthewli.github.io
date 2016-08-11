@@ -43,7 +43,7 @@ $(document).ready(function() {
     pages.map(function(item, index) {
         $('#' + item + '-button').css("cursor", "pointer")
         $('#' + item + '-button').mouseup(function(e) {
-
+            
             if (currentPage !== item) {
                 $('.' + currentPage + '-content').css('display', 'none');
                 $('.' + item + '-content').fadeIn();
