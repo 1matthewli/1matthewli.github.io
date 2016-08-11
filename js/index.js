@@ -14,7 +14,7 @@ var currentPage = 'home';
 function introAnimation () {
     var headerDelay = 400;
     var headerFadeTime = 700;
-    
+
     $('#intro-header-main').delay(300).fadeIn();
     $('.home-header').delay(headerDelay).fadeIn(headerFadeTime);
     $('.navbar-custom').delay(headerDelay + headerFadeTime).fadeIn();
@@ -25,6 +25,7 @@ function introAnimation () {
     $('#intro-header-main').css('-o-transition', 'height .5s');
     $('#intro-header-main').css('-webkit-transition', 'height .5s');
 }
+var menuClicked = false;
 
 $(document).ready(function() {
     var pages = ['home', 'about', 'resume', 'contact'];
@@ -34,15 +35,15 @@ $(document).ready(function() {
     var width = movementStrength / $(window).width();
 
     introAnimation();
-    // preloadImages();
+
+    $('#menu-button').mouseup(function(e) {
+        menuClicked = true;
+    })
 
     pages.map(function(item, index) {
-        // if (item !== 'home') {
-        //     $('.' + item + '-content').css('display', 'none');
-        //     $('.' + item + '-header').css('display', 'none');
-        // }
         $('#' + item + '-button').css("cursor", "pointer")
         $('#' + item + '-button').mouseup(function(e) {
+
             if (currentPage !== item) {
                 $('.' + currentPage + '-content').css('display', 'none');
                 $('.' + item + '-content').fadeIn();
@@ -50,9 +51,7 @@ $(document).ready(function() {
                 $('.' + currentPage + '-header').css('display', 'none');
                 $('.' + item + '-header').fadeIn();
 
-                // $('#intro-header-main').css('opacity');
                 $('#intro-header-main').css('background-image', "url('img/"+item+"-bg.jpg')");
-                // $('#intro-header-main').fadeIn();
 
                 if (item === 'home' || item === 'contact') {
                     $('#intro-header-main').css("height", '85%');
@@ -62,6 +61,10 @@ $(document).ready(function() {
                 }
                 currentPage = item;
             }
+            if (menuClicked)
+                $('#bs-example-navbar-collapse-1').collapse("toggle");
+            
+            menuClicker = false;
         })
     });
 
