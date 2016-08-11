@@ -19,7 +19,7 @@ function introAnimation () {
     $('footer').css('display', 'none')
     // $('.home-header').css('display', 'none');
     $('#intro-header-main').css('display', 'none');
-    $('#intro-header-main').delay(100).fadeIn();
+    $('#intro-header-main').delay(300).fadeIn();
     $('.home-header').delay(headerDelay).fadeIn(headerFadeTime);
     $('.navbar-custom').delay(headerDelay + headerFadeTime).fadeIn();
     $('footer').delay(headerDelay + headerFadeTime).fadeIn();
