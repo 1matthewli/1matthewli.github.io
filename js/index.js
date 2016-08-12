@@ -42,10 +42,10 @@ $(document).ready(function() {
 
             if (currentPage !== item) {
                 $('.' + currentPage + '-content').css('display', 'none');
-                $('.' + item + '-content').fadeIn();
+                $('.' + item + '-content').fadeIn(600);
 
                 $('.' + currentPage + '-header').css('display', 'none');
-                $('.' + item + '-header').fadeIn();
+                $('.' + item + '-header').fadeIn(600);
 
                 $('#intro-header-main').css('background-image', "url('img/"+item+"-bg.jpg')");
 
