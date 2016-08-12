@@ -12,14 +12,13 @@ $(function() {
 var currentPage = 'home';
 
 function introAnimation () {
-    var initialDelay = 500;
-    var headerDelay = 500;
-    var headerFadeTime = 400;
+    var initialDelay = 600;
+    var headerDelay = 800;
 
     $('#intro-header-main').delay(initialDelay).fadeIn();
-    $('.home-header').delay(headerDelay + initialDelay).fadeIn(headerFadeTime);
-    $('.navbar-custom').delay(headerDelay + headerFadeTime + initialDelay).fadeIn();
-    $('footer').delay(headerDelay + headerFadeTime + initialDelay).fadeIn();
+    $('.home-header').delay(headerDelay + initialDelay).fadeIn();
+    $('.navbar-custom').delay(2 * headerDelay + initialDelay).fadeIn();
+    $('footer').delay(2 * headerDelay  + initialDelay).fadeIn();
 
     $('#intro-header-main').css('-moz-transition', 'height .5s');
     $('#intro-header-main').css('-ms-transition', 'height .5s');
