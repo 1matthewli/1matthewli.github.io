@@ -19,12 +19,8 @@ function introAnimation () {
     $('.home-header').delay(headerDelay + initialDelay).fadeIn();
     $('.navbar-custom').delay(2 * headerDelay + initialDelay).fadeIn();
     $('footer').delay(2 * headerDelay  + initialDelay).fadeIn();
-
-    $('#intro-header-main').css('-moz-transition', 'height .5s');
-    $('#intro-header-main').css('-ms-transition', 'height .5s');
-    $('#intro-header-main').css('-o-transition', 'height .5s');
-    $('#intro-header-main').css('-webkit-transition', 'height .5s');
 }
+
 var menuClicked = false;
 
 $(document).ready(function() {

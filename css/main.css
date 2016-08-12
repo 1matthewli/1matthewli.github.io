@@ -8,7 +8,14 @@
 .resume-header, .resume-content, .contact-header, .contact-content {
   display: none;
 }
-
+#contact-card {
+  margin-top: 50px;
+  padding: 15px;
+  border-radius: 10px;
+  border: 3px solid white;
+  background-color: black;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
 #logo {
   margin-top: -12px;
   width: 45;
@@ -171,10 +178,10 @@ hr.small {
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
-  -moz-transition: height 1s;
-  -ms-transition: height 1s;
-  -o-transition: height 1s;
-  -webkit-transition: height 1s;
+  -moz-transition: height 0.7s;
+  -ms-transition: height 0.7s;
+  -o-transition: height 0.7s;
+  -webkit-transition: height 0.7s;
   display: none;
   height: 65%;
   margin-bottom: 0px;
