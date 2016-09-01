@@ -26,7 +26,7 @@ var menuClicked = false;
 $(document).ready(function() {
     var pages = ['home', 'about', 'resume', 'contact'];
 
-    var movementStrength = 15;
+    var movementStrength = 10;
     var height = movementStrength / $(document).height();
     var width = movementStrength / $(document).width();
 
