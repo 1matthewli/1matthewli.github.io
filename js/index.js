@@ -11,12 +11,29 @@ $(function() {
 
 var currentPage = 'home';
 
-function introAnimation () {
+function introAnimation (start_page) {
     var initialDelay = 600;
     var headerDelay = 800;
 
+    var pages = ['home', 'about', 'resume', 'contact'];
+    var item = pages[start_page];
+    currentPage = item;
+
+    $('#intro-header-main').css('background-image', "url('img/"+item+"-bg.jpg')");
+    if (item === 'home' || item === 'contact') {
+        $('#intro-header-main').css("height", '85%');
+    }
+    else {
+        $('#intro-header-main').css("height", '55%');
+    }
+
     $('#intro-header-main').delay(initialDelay).fadeIn();
-    $('.home-header').delay(headerDelay + initialDelay).fadeIn();
+    $('.'+item+'-header').delay(headerDelay + initialDelay).fadeIn();
+
+    if (start_page != 0) {
+        $('.'+item+'-content').delay(headerDelay + initialDelay).fadeIn();
+    }
+
     $('.navbar-custom').delay(2 * headerDelay + initialDelay).fadeIn();
     $('footer').delay(2 * headerDelay  + initialDelay).fadeIn();
 }
@@ -24,21 +41,22 @@ function introAnimation () {
 var menuClicked = false;
 
 $(document).ready(function() {
+    var url = window.location.href;
+    var page = url.substring(url.indexOf('#') + 1);
+
     var pages = ['home', 'about', 'resume', 'contact'];
+    var start_page = pages.indexOf(page) === -1 ? 0 : pages.indexOf(page);
 
     var movementStrength = 10;
     var height = movementStrength / $(document).height();
     var width = movementStrength / $(document).width();
 
-    introAnimation();
-
     $('#menu-button').mouseup(function(e) {
         menuClicked = true;
     })
 
-    pages.map(function(item, index) {
-        $('.' + item + '-button').css("cursor", "pointer")
-        $('.' + item + '-button').mouseup(function(e) {
+    var page_functions = pages.map(function(item, index) {
+        return (function(e) {
 
             if (currentPage !== item) {
                 $('.' + currentPage + '-content').css('display', 'none');
@@ -61,7 +79,13 @@ $(document).ready(function() {
                 $('#bs-example-navbar-collapse-1').collapse("toggle");
 
             menuClicked = false;
-        })
+        });
+    });
+
+    introAnimation(start_page);
+
+    pages.map(function(item, index) {
+        $('.' + item + '-button').mouseup(page_functions[index])
     });
 
     $(document).mousemove(function(e){
