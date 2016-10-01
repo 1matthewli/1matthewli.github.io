@@ -60,7 +60,12 @@ $(document).ready(function() {
 
             if (currentPage !== item) {
                 $('.' + currentPage + '-content').css('display', 'none');
-                $('.' + item + '-content').fadeIn(600);
+                if (item === 'contact') {
+                    $('.' + item + '-content').delay(200).fadeIn(600);
+                }
+                else {
+                    $('.' + item + '-content').fadeIn(600);
+                }
 
                 $('.' + currentPage + '-header').css('display', 'none');
                 $('.' + item + '-header').fadeIn(600);
