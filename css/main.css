@@ -198,6 +198,7 @@ hr.small {
   background: no-repeat center center;
   background-attachment: scroll;
   -webkit-background-size: cover;
+  -webkit-transition:background-image 0.5s;
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
