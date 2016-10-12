@@ -168,4 +168,4 @@ $( document ).on( "swipeleft", page, function() {
         $.mobile.changePage("#"+pages[curr-0]);
     }
     
-}
+});
