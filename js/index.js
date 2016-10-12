@@ -161,3 +161,11 @@ function addLoadEvent(func) {
 
 addLoadEvent(preloader);
 
+$( document ).on( "swipeleft", page, function() {
+    var pages = ['home', 'about', 'resume', 'contact'];
+    var curr = pages.indexOf(currentPage);
+    if (curr != 0) {
+        $.mobile.changePage("#"+pages[curr-0]);
+    }
+    
+}
