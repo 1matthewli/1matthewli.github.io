@@ -22,9 +22,11 @@ function introAnimation (start_page) {
     $('#intro-header-main').css('background-image', "url('img/"+item+"-bg.jpg')");
     if (item === 'home' || item === 'contact') {
         $('#intro-header-main').css("height", '85%');
+        $('#intro-header-main').css("min-height", '500px');
     }
     else {
         $('#intro-header-main').css("height", '55%');
+        $('#intro-header-main').css("min-height", '350px');
     }
 
     $('#intro-header-main').delay(initialDelay).fadeIn();
@@ -74,8 +76,10 @@ $(document).ready(function() {
 
                 if (item === 'home' || item === 'contact') {
                     $('#intro-header-main').css("height", '85%');
+                    $('#intro-header-main').css("min-height", '500px');
                 }
                 else {
+                    $('#intro-header-main').css("min-height", '350px');
                     $('#intro-header-main').css("height", '55%');
                 }
                 currentPage = item;
@@ -161,20 +165,62 @@ function addLoadEvent(func) {
 
 addLoadEvent(preloader);
 
-$( document ).on( "swipeleft", document, function() {
-    var pages = ['home', 'about', 'resume', 'contact'];
-    var curr = pages.indexOf(currentPage);
-    if (curr < pages.length - 1) {
-        $.mobile.changePage("#"+pages[curr+1]);
-    }
-    
-});
 
-$( document ).on( "swipeleft", document, function() {
-    var pages = ['home', 'about', 'resume', 'contact'];
-    var curr = pages.indexOf(currentPage);
-    if (curr > 0) {
-        $.mobile.changePage("#"+pages[curr-1]);
-    }
+// $(document).on('swipeleft', function(event){
+//     alert("BOB");   
+//     console.log("BOB")
+    // if(event.handled !== true) // This will prevent event triggering more then once
+    // {    
+    //     var pages = ['home', 'about', 'resume', 'contact'];
+    //     var curr = pages.indexOf(currentPage);
+    //     if (curr < pages.length - 1) {
+    //         // $.mobile.changePage("#"+pages[curr+1]);
+    //     // }
+
+    //     // var nextpage = $.mobile.activePage.next('[data-role="page"]');
+    //     // // swipe using id of next page if exists
+    //     // if (nextpage.length > 0) {
+    //         $.mobile.changePage("#"+pages[curr+1], {transition: "slide", reverse: false}, true, true);
+    //     }
+    //     event.handled = true;
+    // }
+    // return false;         
+// });
+
+// $(document).on('swipeleft', '#home, #about, #resume', function(event){
+//     console.log("BOB")
+//     if(event.handled !== true) // This will prevent event triggering more then once
+//     {    
+//         var pages = ['home', 'about', 'resume', 'contact'];
+//         var curr = pages.indexOf(currentPage);
+//         if (curr > 0) {
+//             // $.mobile.changePage("#"+pages[curr+1]);
+//         // }
     
-});
+//         // var nextpage = $.mobile.activePage.next('[data-role="page"]');
+//         // // swipe using id of next page if exists
+//         // if (nextpage.length > 0) {
+//             $.mobile.changePage("#"+pages[curr-1], {transition: "slide", reverse: false}, true, true);
+//         }
+//         event.handled = true;
+//     }
+//     return false;         
+// });
+
+// $( document ).on( "swipeleft", document, function() {
+//     var pages = ['home', 'about', 'resume', 'contact'];
+//     var curr = pages.indexOf(currentPage);
+//     if (curr < pages.length - 1) {
+//         $.mobile.changePage("#"+pages[curr+1]);
+//     }
+    
+// });
+
+// $( document ).on( "swipeleft", document, function() {
+//     var pages = ['home', 'about', 'resume', 'contact'];
+//     var curr = pages.indexOf(currentPage);
+//     if (curr > 0) {
+//         $.mobile.changePage("#"+pages[curr-1]);
+//     }
+    
+// });

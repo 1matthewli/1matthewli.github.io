@@ -183,6 +183,7 @@ hr.small {
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
+  /*min-height: 350px;*/
 /*  -moz-transition: height 0.5s;
   -ms-transition: height 0.5s;
   -o-transition: height 0.5s;
@@ -205,6 +206,7 @@ hr.small {
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
+  /*min-height: 700px;*/
   height: 85%;
   margin-bottom: 0px;
   background-position: 0px 0px;
