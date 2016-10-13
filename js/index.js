@@ -161,7 +161,7 @@ function addLoadEvent(func) {
 
 addLoadEvent(preloader);
 
-$( document ).on( "swipeleft", page, function() {
+$( document ).on( "swipeleft", document, function() {
     var pages = ['home', 'about', 'resume', 'contact'];
     var curr = pages.indexOf(currentPage);
     if (curr != 0) {
