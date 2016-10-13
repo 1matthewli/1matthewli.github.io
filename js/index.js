@@ -164,8 +164,17 @@ addLoadEvent(preloader);
 $( document ).on( "swipeleft", document, function() {
     var pages = ['home', 'about', 'resume', 'contact'];
     var curr = pages.indexOf(currentPage);
-    if (curr != 0) {
-        $.mobile.changePage("#"+pages[curr-0]);
+    if (curr < pages.length - 1) {
+        $.mobile.changePage("#"+pages[curr+1]);
+    }
+    
+});
+
+$( document ).on( "swipeleft", document, function() {
+    var pages = ['home', 'about', 'resume', 'contact'];
+    var curr = pages.indexOf(currentPage);
+    if (curr > 0) {
+        $.mobile.changePage("#"+pages[curr-1]);
     }
     
 });
