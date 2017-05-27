@@ -26,7 +26,7 @@ function introAnimation (start_page) {
     }
     else {
         // $('#intro-header-main').css("height", '375px');
-        $('#intro-header-main').css("height", '55%');
+        $('#intro-header-main').css("height", '65%');
         $('#intro-header-main').css("min-height", '350px');
         // $('#intro-header-main').css("max-height", '400px');
     }
@@ -84,7 +84,7 @@ $(document).ready(function() {
                 }
                 else {
                     $('#intro-header-main').css("min-height", '350px');
-                    $('#intro-header-main').css("height", '55%');
+                    $('#intro-header-main').css("height", '65%');
                     // $('#intro-header-main').css("height", '375px');
                 }
 
