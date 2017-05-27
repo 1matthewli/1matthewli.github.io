@@ -65,7 +65,7 @@ $(document).ready(function() {
         return (function(e) {
 
             if (currentPage !== item) {
-                $('.' + currentPage + '-content').css('display', 'none');
+                $('.' + currentPage + '-content').hide();
                 if (item === 'contact') {
                     $('.' + item + '-content').delay(200).fadeIn(600);
                 }
@@ -73,10 +73,10 @@ $(document).ready(function() {
                     $('.' + item + '-content').fadeIn(600);
                 }
 
-                $('.' + currentPage + '-header').css('display', 'none');
+                $('.' + currentPage + '-header').hide();
                 $('.' + item + '-header').fadeIn(600);
 
-                $('#intro-header-main').css('background-image', "url('img/"+item+"-bg.jpg')");
+               
 
                 if (item === 'home' || item === 'contact') {
                     $('#intro-header-main').css("height", '85%');
@@ -86,8 +86,12 @@ $(document).ready(function() {
                     $('#intro-header-main').css("min-height", '350px');
                     $('#intro-header-main').css("height", '55%');
                     // $('#intro-header-main').css("height", '375px');
-
                 }
+
+                $('#intro-header-main').delay(100).queue(function (next) {
+                    $(this).css('background-image', "url('img/"+item+"-bg.jpg')");
+                    next();
+                });
                 currentPage = item;
             }
             if (menuClicked)
