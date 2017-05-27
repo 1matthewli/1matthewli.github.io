@@ -25,8 +25,10 @@ function introAnimation (start_page) {
         $('#intro-header-main').css("min-height", '500px');
     }
     else {
+        // $('#intro-header-main').css("height", '375px');
         $('#intro-header-main').css("height", '55%');
         $('#intro-header-main').css("min-height", '350px');
+        // $('#intro-header-main').css("max-height", '400px');
     }
 
     $('#intro-header-main').delay(initialDelay).fadeIn();
@@ -83,6 +85,8 @@ $(document).ready(function() {
                 else {
                     $('#intro-header-main').css("min-height", '350px');
                     $('#intro-header-main').css("height", '55%');
+                    // $('#intro-header-main').css("height", '375px');
+
                 }
                 currentPage = item;
             }
@@ -105,7 +109,7 @@ $(document).ready(function() {
       var pageY = e.pageY - ($(document).height() / 2);
       var weight = 0.8;
       var newvalueX = weight * width * pageX * -1 - 5;
-      var newvalueY = weight * height * pageY * -1;
+      var newvalueY = weight * height * pageY * -1 + 5;
       $(".intro-header").css("background-position", newvalueX + "px " + newvalueY + "px");
     });
 });
