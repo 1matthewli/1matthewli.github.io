@@ -48,6 +48,8 @@ $(document).ready(function() {
 
     var pages = ['home', 'about', 'resume', 'contact'];
     var start_page = pages.indexOf(page) === -1 ? 0 : pages.indexOf(page);
+    if (start_page == 2) // temporarily removing resume page
+        start_page = 0
 
     var movementStrength = 10;
     var height = movementStrength / $(document).height();
@@ -101,8 +103,9 @@ $(document).ready(function() {
 
       var pageX = e.pageX - ($(document).width() / 2);
       var pageY = e.pageY - ($(document).height() / 2);
-      var newvalueX = width * pageX * -1;
-      var newvalueY = height * pageY * -1;
+      var weight = 0.8;
+      var newvalueX = weight * width * pageX * -1 - 5;
+      var newvalueY = weight * height * pageY * -1;
       $(".intro-header").css("background-position", newvalueX + "px " + newvalueY + "px");
     });
 });
