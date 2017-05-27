@@ -22,7 +22,7 @@ function introAnimation (start_page) {
     $('#intro-header-main').css('background-image', "url('img/"+item+"-bg.jpg')");
     if (item === 'home' || item === 'contact') {
         $('#intro-header-main').css("height", '85%');
-        $('#intro-header-main').css("min-height", '500px');
+        $('#intro-header-main').css("min-height", '550px');
     }
     else {
         // $('#intro-header-main').css("height", '375px');
@@ -80,7 +80,7 @@ $(document).ready(function() {
 
                 if (item === 'home' || item === 'contact') {
                     $('#intro-header-main').css("height", '85%');
-                    $('#intro-header-main').css("min-height", '500px');
+                    $('#intro-header-main').css("min-height", '550px');
                 }
                 else {
                     $('#intro-header-main').css("min-height", '350px');
