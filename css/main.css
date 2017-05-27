@@ -197,10 +197,10 @@ hr.small {
   background: no-repeat center center;
   background-attachment: scroll;
   -webkit-background-size: cover;
-  -webkit-transition: background-image 0.8s, height 0.5s;
-  -moz-transition: background-image 0.8s, height 0.5s;
-  -ms-transition: background-image 0.8s, height 0.5s;
-  -o-transition: background-image 0.8s, height 0.5s;
+  -webkit-transition: background-image 0.8s, height 0.4s, min-height 0.4s;
+  -moz-transition: background-image 0.8s, height 0.4s, min-height 0.4s;
+  -ms-transition: background-image 0.8s, height 0.4s, min-height 0.4s;
+  -o-transition: background-image 0.8s, height 0.4s, min-height 0.4s;
     /*-moz-transition: height 0.5s;
   -ms-transition: height 0.5s;
   -o-transition: height 0.5s;
