@@ -11,6 +11,24 @@ $(function() {
 
 var currentPage = 'home';
 
+function largePageChanges() {
+    $('#intro-header-main').css("height", '100%');
+    $('#intro-header-main').css("min-height", '400px');
+    $('footer').css('position', 'absolute');
+    $('footer').css('bottom', '-5px');
+    $('html').css('overflow-y', 'hidden');
+    $('body').css('overflow-y', 'hidden');
+}
+
+function smallPageChanges() {
+    $('#intro-header-main').css("height", '65%');
+    $('#intro-header-main').css("min-height", '350px');
+    $('footer').css('display', 'relative');
+    $('footer').css('bottom', '');
+    $('html').css('overflow-y', '');
+    $('body').css('overflow-y', '');
+}
+
 function introAnimation (start_page) {
     var initialDelay = 600;
     var headerDelay = 800;
@@ -21,14 +39,10 @@ function introAnimation (start_page) {
 
     $('#intro-header-main').css('background-image', "url('img/"+item+"-bg.jpg')");
     if (item === 'home' || item === 'contact') {
-        $('#intro-header-main').css("height", '85%');
-        $('#intro-header-main').css("min-height", '550px');
+        largePageChanges();
     }
     else {
-        // $('#intro-header-main').css("height", '375px');
-        $('#intro-header-main').css("height", '65%');
-        $('#intro-header-main').css("min-height", '350px');
-        // $('#intro-header-main').css("max-height", '400px');
+        smallPageChanges();
     }
 
     $('#intro-header-main').delay(initialDelay).fadeIn();
@@ -76,16 +90,18 @@ $(document).ready(function() {
                 $('.' + currentPage + '-header').hide();
                 $('.' + item + '-header').fadeIn(600);
 
-               
 
                 if (item === 'home' || item === 'contact') {
-                    $('#intro-header-main').css("height", '85%');
-                    $('#intro-header-main').css("min-height", '550px');
+                    if (currentPage !== 'home' && currentPage !== 'contact')
+                        $('footer').hide();
+                    largePageChanges();
+                    if (currentPage !== 'home' && currentPage !== 'contact')
+                        $('footer').delay(600).fadeIn(400);
                 }
                 else {
-                    $('#intro-header-main').css("min-height", '350px');
-                    $('#intro-header-main').css("height", '65%');
-                    // $('#intro-header-main').css("height", '375px');
+
+                    smallPageChanges();
+
                 }
 
                 $('#intro-header-main').delay(100).queue(function (next) {

@@ -3,6 +3,10 @@
  * Copyright 2013-2016 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
 
 .home-header, .home-content, .about-header, .about-content, 
 .resume-header, .resume-content, .contact-header, .contact-content {
@@ -107,7 +111,8 @@ hr.small {
 
 @media only screen and (min-width: 768px) {
   .navbar-custom {
-    background: #F8F8F8;
+    /*background: #F8F8F8;*/
+    background-color: rgba(255,255,255,0.8);
     border-bottom: 1px solid transparent;
   }
   .navbar-custom .navbar-brand {
@@ -197,10 +202,10 @@ hr.small {
   background: no-repeat center center;
   background-attachment: scroll;
   -webkit-background-size: cover;
-  -webkit-transition: background-image 0.8s, height 0.4s, min-height 0.4s;
-  -moz-transition: background-image 0.8s, height 0.4s, min-height 0.4s;
-  -ms-transition: background-image 0.8s, height 0.4s, min-height 0.4s;
-  -o-transition: background-image 0.8s, height 0.4s, min-height 0.4s;
+  -webkit-transition: background-image 0.6s, height 0.6s, min-height 0.6s;
+  -moz-transition: background-image 0.6s, height 0.6s, min-height 0.6s;
+  -ms-transition: background-image 0.6s, height 0.6s, min-height 0.6s;
+  -o-transition: background-image 0.6s, height 0.6s, min-height 0.6s;
     /*-moz-transition: height 0.5s;
   -ms-transition: height 0.5s;
   -o-transition: height 0.5s;
@@ -336,8 +341,11 @@ hr.small {
   border-bottom-left-radius: 5px;
 }
 footer {
+  width: 100%;
   display: none;
-  padding: 25px 0 25px;
+  padding: 20px 0 20px;
+  background-color: rgba(255,255,255,0.8);
+  /*background-color: white;*/
 }
 footer .list-inline {
   margin: 0;
