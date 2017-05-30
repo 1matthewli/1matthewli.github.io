@@ -21,7 +21,7 @@ function largePageChanges() {
 }
 
 function smallPageChanges() {
-    $('#intro-header-main').css("height", '65%');
+    $('#intro-header-main').css("height", '50%');
     $('#intro-header-main').css("min-height", '350px');
     $('footer').css('display', 'relative');
     $('footer').css('bottom', '');
