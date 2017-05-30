@@ -21,7 +21,7 @@ function largePageChanges() {
 }
 
 function smallPageChanges() {
-    $('#intro-header-main').css("height", '50%');
+    $('#intro-header-main').css("height", '55%');
     $('#intro-header-main').css("min-height", '350px');
     $('footer').css('display', 'relative');
     $('footer').css('bottom', '');
@@ -129,7 +129,7 @@ $(document).ready(function() {
       var pageY = e.pageY - ($(document).height() / 2);
       var weight = 0.8;
       var newvalueX = weight * width * pageX * -1 - 5;
-      var newvalueY = weight * height * pageY * -1 + 5;
+      var newvalueY = weight * height * pageY * -1 - 5;
       $(".intro-header").css("background-position", newvalueX + "px " + newvalueY + "px");
     });
 });
