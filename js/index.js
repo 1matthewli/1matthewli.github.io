@@ -13,7 +13,7 @@ var currentPage = 'home';
 
 function largePageChanges() {
     $('#intro-header-main').css("height", '100%');
-    $('#intro-header-main').css("min-height", '400px');
+    $('#intro-header-main').css("min-height", '0px');
     $('footer').css('position', 'absolute');
     $('footer').css('bottom', '-5px');
     $('html').css('overflow-y', 'hidden');
@@ -21,7 +21,7 @@ function largePageChanges() {
 }
 
 function smallPageChanges() {
-    $('#intro-header-main').css("height", '55%');
+    $('#intro-header-main').css("height", '350px');
     $('#intro-header-main').css("min-height", '350px');
     $('footer').css('display', 'relative');
     $('footer').css('bottom', '');
@@ -64,8 +64,8 @@ $(document).ready(function() {
 
     var pages = ['home', 'about', 'resume', 'contact'];
     var start_page = pages.indexOf(page) === -1 ? 0 : pages.indexOf(page);
-    if (start_page == 2) // temporarily removing resume page
-        start_page = 0
+    // if (start_page == 2) // temporarily removing resume page
+    //     start_page = 0
 
     var movementStrength = 10;
     var height = movementStrength / $(document).height();
@@ -130,6 +130,13 @@ $(document).ready(function() {
       var weight = 0.8;
       var newvalueX = weight * width * pageX * -1 - 5;
       var newvalueY = weight * height * pageY * -1 - 5;
+      // upper bound the movement
+      if (Math.abs(newvalueX) > 10) {
+        newvalueX = Math.sign(newvalueX) * 10;
+      }
+      if (Math.abs(newvalueY) > 10) {
+        newvalueY = Math.sign(newvalueY) * 10;
+      }
       $(".intro-header").css("background-position", newvalueX + "px " + newvalueY + "px");
     });
 });
@@ -191,63 +198,3 @@ function addLoadEvent(func) {
 }
 
 addLoadEvent(preloader);
-
-
-// $(document).on('swipeleft', function(event){
-//     alert("BOB");   
-//     console.log("BOB")
-    // if(event.handled !== true) // This will prevent event triggering more then once
-    // {    
-    //     var pages = ['home', 'about', 'resume', 'contact'];
-    //     var curr = pages.indexOf(currentPage);
-    //     if (curr < pages.length - 1) {
-    //         // $.mobile.changePage("#"+pages[curr+1]);
-    //     // }
-
-    //     // var nextpage = $.mobile.activePage.next('[data-role="page"]');
-    //     // // swipe using id of next page if exists
-    //     // if (nextpage.length > 0) {
-    //         $.mobile.changePage("#"+pages[curr+1], {transition: "slide", reverse: false}, true, true);
-    //     }
-    //     event.handled = true;
-    // }
-    // return false;         
-// });
-
-// $(document).on('swipeleft', '#home, #about, #resume', function(event){
-//     console.log("BOB")
-//     if(event.handled !== true) // This will prevent event triggering more then once
-//     {    
-//         var pages = ['home', 'about', 'resume', 'contact'];
-//         var curr = pages.indexOf(currentPage);
-//         if (curr > 0) {
-//             // $.mobile.changePage("#"+pages[curr+1]);
-//         // }
-    
-//         // var nextpage = $.mobile.activePage.next('[data-role="page"]');
-//         // // swipe using id of next page if exists
-//         // if (nextpage.length > 0) {
-//             $.mobile.changePage("#"+pages[curr-1], {transition: "slide", reverse: false}, true, true);
-//         }
-//         event.handled = true;
-//     }
-//     return false;         
-// });
-
-// $( document ).on( "swipeleft", document, function() {
-//     var pages = ['home', 'about', 'resume', 'contact'];
-//     var curr = pages.indexOf(currentPage);
-//     if (curr < pages.length - 1) {
-//         $.mobile.changePage("#"+pages[curr+1]);
-//     }
-    
-// });
-
-// $( document ).on( "swipeleft", document, function() {
-//     var pages = ['home', 'about', 'resume', 'contact'];
-//     var curr = pages.indexOf(currentPage);
-//     if (curr > 0) {
-//         $.mobile.changePage("#"+pages[curr-1]);
-//     }
-    
-// });
