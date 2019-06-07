@@ -16,13 +16,16 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: rgba(15,15,15,.95) !important;
+    background: rgba(10,10,10,.85) !important;
     width: auto;
-    border-radius: 25px !important;
+    border-radius: 30px !important;
     padding-bottom: 25px;
     padding-top: 15px;
     padding-left: 50px;
     padding-right: 50px;
+
+    border-top: 10px solid #e77500;
+    border-bottom:10px solid #e77500;
 }
 
 #contact-buttons a {
