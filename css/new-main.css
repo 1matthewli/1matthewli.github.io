@@ -1,0 +1,30 @@
+h1 {
+	font-size: 56px;
+}
+
+body {
+    position: relative;
+    height: 100vh;
+    font-size: 18px;
+    font-weight: 200;
+    font-family: "Helvetica Neue";
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#contact-buttons a {
+    font-size: 30px;
+    color: #555;
+}
+
+/*#bio {
+	margin-left: 300px;
+	margin-right: 300px;
+    font-weight: 200;
+}
+*/
