@@ -7,19 +7,25 @@ body {
     height: 100vh;
     font-size: 18px;
     font-weight: 200;
+    color: white;
     font-family: "Helvetica Neue";
 }
+
 
 .container {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    background: rgba(20,20,20,.9);
+    width: 500px;
+    border-radius: 25px;
+    padding-bottom: 10px;
 }
 
 #contact-buttons a {
     font-size: 30px;
-    color: #555;
+    color: white;
 }
 
 #dot {
@@ -28,7 +34,14 @@ body {
 }
 
 .links {
-	color: black !important;
+	color: white !important;
 	font-weight: 400 !important;
 	text-decoration: underline !important;
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: black;
 }
