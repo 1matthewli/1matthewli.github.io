@@ -2,12 +2,12 @@ var w = c.width = window.innerWidth,
     h = c.height = window.innerHeight,
     ctx = c.getContext( '2d' ),
     
-    minDist = 10,
-    maxDist = 30,
-    initialWidth = 5,
-    maxLines = 50,
+    minDist = 30,
+    maxDist = 50,
+    initialWidth = 3,
+    maxLines = 75,
     initialLines = 4,
-    speed = 2,
+    speed = 1.5,
     
     lines = [],
     frame = 0,
@@ -48,10 +48,12 @@ function init() {
   // ctx.lineCap = 'round';
 }
 function getColor( x ) {
-  
-  return 'hsl( hue, 80%, 50% )'.replace(
-  	'hue', x / w * 360 + frame
-  );
+  return 'white';
+
+  // uncomment for rainbow color
+  // return 'hsl( hue, 80%, 50% )'.replace(
+  // 	'hue', x / w * 360 + frame
+  // );
 }
 function anim() {
   
