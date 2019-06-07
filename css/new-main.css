@@ -7,7 +7,7 @@ body {
     height: 100vh;
     font-size: 16px;
     font-weight: 200;
-    color: rgb(210,210,210) !important;
+    color: white !important;
     font-family: "Helvetica Neue";
 }
 
@@ -26,7 +26,7 @@ body {
 
 #contact-buttons a {
     font-size: 30px;
-    color: rgb(210,210,210);
+    color: white;
 }
 
 #dot {
@@ -35,7 +35,7 @@ body {
 }
 
 .links {
-	color: rgb(210,210,210) !important;
+	color: white !important;
 	font-weight: 400 !important;
 	text-decoration: underline !important;
 }
