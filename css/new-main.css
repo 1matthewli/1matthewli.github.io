@@ -1,13 +1,13 @@
 h1 {
-	font-size: 56px;
+	font-size: 46px;
 }
 
 body {
     position: relative;
     height: 100vh;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 200;
-    color: white !important;
+    color: rgb(210,210,210) !important;
     font-family: "Helvetica Neue";
 }
 
@@ -16,15 +16,17 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: rgba(20,20,20,.9) !important;
-    width: 500px;
+    background: rgba(15,15,15,.95) !important;
+    width: auto;
     border-radius: 25px !important;
     padding-bottom: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
 }
 
 #contact-buttons a {
     font-size: 30px;
-    color: white;
+    color: rgb(210,210,210);
 }
 
 #dot {
@@ -33,7 +35,7 @@ body {
 }
 
 .links {
-	color: white !important;
+	color: rgb(210,210,210) !important;
 	font-weight: 400 !important;
 	text-decoration: underline !important;
 }
