@@ -28,7 +28,7 @@ body {
 }
 
 .links {
-	color: black;
-	font-weight: 400;
-	text-decoration: underline;
+	color: black !important;
+	font-weight: 400 !important;
+	text-decoration: underline !important;
 }
