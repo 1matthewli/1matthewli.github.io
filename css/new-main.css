@@ -26,3 +26,9 @@ body {
 	margin-left: 2px;
 	margin-right: 2px;
 }
+
+.links {
+	color: black;
+	font-weight: 400;
+	text-decoration: underline;
+}
