@@ -19,7 +19,8 @@ body {
     background: rgba(15,15,15,.95) !important;
     width: auto;
     border-radius: 25px !important;
-    padding-bottom: 10px;
+    padding-bottom: 25px;
+    padding-top: 15px;
     padding-left: 50px;
     padding-right: 50px;
 }
@@ -38,6 +39,55 @@ body {
 	color: white !important;
 	font-weight: 400 !important;
 	text-decoration: underline !important;
+}
+
+/* Tooltip container */
+.tooltip {
+  color: white !important;
+  opacity: 1 !important;
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  background-color: rgba(15,15,15,0);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  font-size: 12px;
+
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+  width: 60px;
+  top: 100%;
+  left: 50%; 
+  margin-left: -30px; /* Use half of the width (120/2 = 60), to center the tooltip */
+
+  /* Fade in tooltip */
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+/* Tooltip arrow */
+/*.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}*/
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
 }
 
 canvas {
