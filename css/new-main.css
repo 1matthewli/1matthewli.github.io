@@ -7,19 +7,18 @@ body {
     height: 100vh;
     font-size: 18px;
     font-weight: 200;
-    color: white;
+    color: white !important;
     font-family: "Helvetica Neue";
 }
-
 
 .container {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: rgba(20,20,20,.9);
+    background: rgba(20,20,20,.9) !important;
     width: 500px;
-    border-radius: 25px;
+    border-radius: 25px !important;
     padding-bottom: 10px;
 }
 
