@@ -5,7 +5,7 @@ h1 {
 
 body {
     position: relative;
-    height: 100vh;
+    height: auto;
     font-size: 16px;
     font-weight: 200;
     color: white !important;
@@ -13,23 +13,34 @@ body {
     background-color: #63D0FF;
 }
 
+.center-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+}
+
 .container {
     position: absolute;
     top: 50%;
     left: 50%;
+    margin-right: -50%;
     transform: translate(-50%, -50%);
     background: rgba(10,10,10,.85) !important;
     width: auto;
+
     border-radius: 50px !important;
     padding-bottom: 25px;
     padding-top: 15px;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 35px;
+    padding-right: 35px;
 
     border-top: 5px solid rgb(217, 240, 252);
     border-bottom:5px solid rgb(217, 240, 252);
     z-index: 100 !important;
-    min-width: 300px;
+    max-width: calc(100vw - 75px);
 }
 
 #contact-buttons a {
@@ -116,8 +127,8 @@ body{
   padding:0;
   /*background:#63D0FF;*/
   height:100%;
-  min-width: 450px;
-  /*min-height: 450px;*/
+  /*min-width: 450px;
+  min-height: 450px;*/
 }
 
 #wrapper {
