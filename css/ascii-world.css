@@ -1,0 +1,403 @@
+/* Pure monochrome black & white ASCII room styling */
+:root {
+  --ink: #050506;
+  --chalk: #f5f5f7;
+  --chalk-soft: #9a9aa4;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'SF Mono', 'Cascadia Code', 'Consolas', 'Liberation Mono', 'Courier New', monospace;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: var(--ink);
+  color: var(--chalk);
+  font-family: var(--font-mono);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
+}
+
+#world-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  background-color: var(--ink);
+  cursor: pointer;
+}
+
+/* Understated, editorial monochrome name & history nestled in the upper clearing */
+#name-plate {
+  position: fixed;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+  pointer-events: none;
+  text-align: center;
+  padding: 26px 56px;
+  border-radius: 999px;
+  background: radial-gradient(
+    ellipse 64% 66% at 50% 50%,
+    rgba(5, 5, 6, 0.98) 0%,
+    rgba(5, 5, 6, 0.92) 48%,
+    rgba(5, 5, 6, 0.56) 76%,
+    rgba(5, 5, 6, 0) 100%
+  );
+  --glow: 0;
+  opacity: calc(0.86 + var(--glow) * 0.14);
+  transition: opacity 0.22s ease;
+}
+
+#name-plate h1 {
+  font-family: var(--font-mono);
+  font-weight: 300;
+  font-size: clamp(16px, 2.2vw, 23px);
+  letter-spacing: 0.44em;
+  text-indent: 0.44em;
+  white-space: nowrap;
+  color: var(--chalk);
+  margin-bottom: 10px;
+  text-shadow:
+    0 0 18px rgba(5, 5, 6, 0.98),
+    0 0 8px rgba(5, 5, 6, 1),
+    0 0 calc(6px + var(--glow) * 14px) rgba(255, 255, 255, calc(0.14 + var(--glow) * 0.36));
+}
+
+#name-plate .bio-now {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: clamp(11px, 1.1vw, 12.5px);
+  letter-spacing: 0.13em;
+  color: #b4b4be;
+  white-space: nowrap;
+  margin-bottom: 5px;
+  text-shadow: 0 0 12px rgba(5, 5, 6, 1), 0 0 6px rgba(5, 5, 6, 1);
+}
+
+#name-plate .bio-prev {
+  font-family: var(--font-mono);
+  font-weight: 300;
+  font-size: clamp(10px, 1vw, 11.5px);
+  letter-spacing: 0.11em;
+  color: #7c7c88;
+  white-space: nowrap;
+  text-shadow: 0 0 12px rgba(5, 5, 6, 1), 0 0 6px rgba(5, 5, 6, 1);
+}
+
+/* Crisp, legible monochrome bottom bar & leave-a-message trigger */
+#bottom-bar {
+  position: fixed;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 6;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: calc(100vw - 24px);
+}
+
+#hint {
+  pointer-events: none;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.08em;
+  color: #dcdce4;
+  background: rgba(5, 5, 6, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  padding: 6px 14px;
+  white-space: nowrap;
+  opacity: 0.96;
+  transition: opacity 0.5s ease;
+  box-shadow: 0 0 18px rgba(5, 5, 6, 0.98);
+}
+
+#hint.quiet {
+  opacity: 0.78;
+}
+
+.mono-btn {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.08em;
+  color: var(--chalk);
+  background: rgba(5, 5, 6, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  padding: 6px 13px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.mono-btn:hover,
+.mono-btn:focus-visible {
+  background: var(--chalk);
+  color: var(--ink);
+  border-color: var(--chalk);
+  outline: none;
+}
+
+.mono-btn.subtle {
+  color: #b4b4be;
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.mono-btn.subtle:hover,
+.mono-btn.subtle:focus-visible {
+  color: var(--ink);
+  background: #d8d8e0;
+  border-color: #d8d8e0;
+}
+
+/* Minimal monochrome message composer strip anchored cleanly below the bio */
+#message-panel {
+  position: fixed;
+  top: 23%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 8;
+  width: min(560px, calc(100vw - 28px));
+  text-align: center;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+#message-panel.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -8px);
+}
+
+.msg-box {
+  background: rgba(5, 5, 6, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  padding: 10px 14px;
+  box-shadow: 0 0 28px rgba(5, 5, 6, 0.98);
+}
+
+.msg-line {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 28px;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  color: var(--chalk);
+  text-align: left;
+  word-break: break-word;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  cursor: text;
+}
+
+.msg-prompt {
+  color: #8c8c98;
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+
+.msg-text {
+  white-space: pre-wrap;
+}
+
+.msg-cursor {
+  display: inline-block;
+  color: var(--chalk);
+  animation: blink-cursor 0.95s steps(2, start) infinite;
+}
+
+.msg-placeholder {
+  color: #6a6a76;
+  margin-left: 4px;
+}
+
+.msg-placeholder.hidden {
+  display: none;
+}
+
+.msg-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.notes-list {
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  max-height: 112px;
+  overflow-y: auto;
+  text-align: left;
+}
+
+.notes-list.hidden,
+.mono-btn.hidden {
+  display: none;
+}
+
+.notes-heading {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: #7c7c88;
+  margin-bottom: 6px;
+}
+
+.note-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 11.5px;
+  line-height: 1.45;
+  color: #d6d6de;
+  padding: 3px 0;
+}
+
+.note-item-text {
+  word-break: break-word;
+}
+
+.note-item-time {
+  color: #6c6c78;
+  font-size: 10px;
+  flex-shrink: 0;
+}
+
+.msg-status {
+  margin-top: 8px;
+  min-height: 16px;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: #c8c8d2;
+  text-shadow: 0 0 12px rgba(5, 5, 6, 1), 0 0 6px rgba(5, 5, 6, 1);
+}
+
+/* Native transparent input overlaid right on .msg-line (16px prevents iOS auto-zoom, tapping always opens iOS keyboard!) */
+#mobile-type-input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.001;
+  font-size: 16px;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  color: transparent;
+  caret-color: transparent;
+  outline: none;
+  cursor: text;
+}
+
+#presence-pill {
+  position: fixed;
+  top: 14px;
+  left: 16px;
+  z-index: 6;
+  pointer-events: none;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  color: rgba(232, 232, 238, 0.72);
+  background: rgba(5, 5, 6, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  padding: 5px 10px;
+  transition: opacity 0.25s ease;
+}
+
+#presence-pill.hidden {
+  display: none;
+}
+
+/* On mobile/iOS typing mode, clear the header & bottom bar and pin composer to top so cat + ASCII keyboard stay 100% visible above the iOS keyboard! */
+body.typing-mobile #name-plate,
+body.typing-mobile #bottom-bar,
+body.typing-mobile #presence-pill {
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+body.typing-mobile #message-panel {
+  top: 10px;
+  width: calc(100vw - 20px);
+}
+
+body.typing-mobile .msg-box {
+  padding: 8px 11px;
+}
+
+body.typing-mobile .notes-list {
+  max-height: 54px;
+  margin-top: 6px;
+  padding-top: 6px;
+}
+
+@keyframes blink-cursor {
+  to {
+    visibility: hidden;
+  }
+}
+
+@media (max-width: 640px) {
+  #name-plate {
+    top: 13%;
+    padding: 16px 26px;
+    max-width: calc(100vw - 12px);
+  }
+
+  #name-plate h1 {
+    font-size: 16px;
+    letter-spacing: 0.34em;
+    text-indent: 0.34em;
+    margin-bottom: 8px;
+  }
+
+  #name-plate .bio-now {
+    font-size: 10px;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+  }
+
+  #name-plate .bio-prev {
+    font-size: 9.5px;
+    letter-spacing: 0.06em;
+  }
+
+  #bottom-bar {
+    bottom: 10px;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  #hint {
+    font-size: 10px;
+    padding: 5px 10px;
+  }
+
+  .mono-btn {
+    font-size: 10.5px;
+    padding: 5px 11px;
+  }
+
+  #message-panel {
+    top: 12px;
+  }
+
+  .msg-line {
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Matthew Li</title>
+  <meta name="description" content="Matthew Li — building Antigravity at Google DeepMind. Previously Windsurf, Nuro.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/ascii-world.css?v=17">
+</head>
+<body>
+  <canvas id="world-canvas" aria-label="Interactive monochrome ASCII clearing with a wandering cat"></canvas>
+  <div id="presence-pill" class="hidden" aria-live="polite"></div>
+
+  <header id="name-plate" aria-label="Matthew Li">
+    <h1>MATTHEW LI</h1>
+    <p class="bio-now">building antigravity · google deepmind</p>
+    <p class="bio-prev">previously windsurf, nuro</p>
+  </header>
+
+  <section id="message-panel" class="hidden" aria-label="Leave a message for Matthew">
+    <div class="msg-box">
+      <div id="msg-line" class="msg-line">
+        <span class="msg-prompt">&gt;</span>
+        <span id="msg-display" class="msg-text"></span><span class="msg-cursor" aria-hidden="true">_</span>
+        <span id="msg-placeholder" class="msg-placeholder">type a note for matthew...</span>
+        <input id="mobile-type-input" type="text" enterkeyhint="send" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" aria-label="Type a message">
+      </div>
+      <div class="msg-actions">
+        <button type="button" id="msg-send" class="mono-btn">send [enter]</button>
+        <button type="button" id="msg-close" class="mono-btn subtle">done [esc]</button>
+      </div>
+      <div id="notes-list" class="notes-list hidden" aria-label="Saved messages"></div>
+    </div>
+    <div id="msg-status" class="msg-status" aria-live="polite"></div>
+  </section>
+
+  <footer id="bottom-bar">
+    <div id="hint">wasd / arrows / click to wander · click cat to meow · rub to purr</div>
+    <button type="button" id="msg-toggle" class="mono-btn">leave a message</button>
+  </footer>
+
+  <script src="js/noise.js?v=17"></script>
+  <script src="js/world.js?v=17"></script>
+  <script src="js/renderer.js?v=17"></script>
+  <script src="js/multiplayer.js?v=17"></script>
+  <script src="js/main.js?v=17"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+name = "matthew-cat-meadow"
+main = "src/worker.js"
+compatibility_date = "2025-04-07"
+
+[durable_objects]
+bindings = [
+  { name = "MEADOW", class_name = "MeadowRoom" }
+]
+
+# SQLite-backed Durable Object (supported on Cloudflare Workers Free Plan!)
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["MeadowRoom"]
